@@ -19,12 +19,12 @@ const dataBank = [
     {
         "id": 252616,
         "name": "André Ribeiro",
-        "section": "CENTRO CIRÚRGICO"        
+        "section": "Centro C."        
     }
 ]
 
 var registroDia = []
-console.log(registroDia)
+
 
 frmAuth.onsubmit = (event) => {
     event.preventDefault();
@@ -40,44 +40,42 @@ frmAuth.onsubmit = (event) => {
     return;
     }
     const card = document.querySelector("#lista");
-    card.innerHTML = "";
+    // card.innerHTML = "";
 
-    dataBank.forEach(element => {
-        let listMatricula = element.id;
-        let listName = element.name
-        let listSetor = element.section
-        
+    dataBank.map((element) => {
+        // let listMatricula = element.id;
+        // let listName = element.name
+        // let listSetor = element.section              
 
-         if (validation == listMatricula) {
-            let item = document.createElement("table");
+         if (validation == element.id) {
+            let item = document.createElement("tbody");
             item.classList.add("info");
             
 
-            item.innerHTML = `<thead>
-            <tr>
+            item.innerHTML = 
+            `
             
-              <th scope="col">Data e Hora</th>
-              <th scope="col">Matricula</th>
-              <th scope="col">Nome</th>
-              <th scope="col">Unidade</th>
-              <th scope="col">Item</th>
-            </tr>
-        </thead>
-        <tbody>
-        
-        <td>${horaFormatada}</td>
-        <td>${listMatricula}</td><td>${listName}</td><td>${listSetor}</td><td>${roupa}</td>
-        </tbody>`;
-            card.appendChild(item);
-
-            function guardar () {
-                let info = {horaFormatada, listMatricula, listName, listSetor, roupa};
-                registroDia.push(info);               
-                console.log(registroDia)
-                
-            }
-            guardar
-        }
-        
+                        
+                <td class= "data" >${horaFormatada}</td>
+                <td>${element.id}</td>
+                <td class= "data" >${element.name}</td>
+                <td>${element.section}</td>
+                <td class= "data" >${roupa}</td>
+            `;
+            card.appendChild(item);            
+        } guardar                            
     });    
+    function guardar () {
+        let info = {
+            date: horaFormatada,
+         matricula: listMatricula,
+         name: listName,
+         section: listSetor,
+         type: roupa
+        };
+
+        var registro = registroDia.push(info);   
+        console.log(registro)                                                         
+    }
+    
 }

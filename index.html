@@ -10,7 +10,7 @@
     <div id="header">
     <h1 name="title"> Gestão de Rouparia</h1>
     </div>
-
+    <main>
     <div id="form">
         <form id="auth">
             <label><input type="radio" name="radio" value="Roupa Privativa" /> Roupa Privativa</label> <br/>
@@ -22,10 +22,28 @@
             <button type="submit" aria-required="true">Adicionar</button>
         </form>
     </div>
-
-    <div id="lista">
-               
+    <div class="teste">
+        <h4>Matriculas de teste</h4>
+        <ul>
+            <li>252611</li>         
+            <li>252512</li>
+            <li>252111</li>
+            <li>252616</li>
     </div>
+    </main>
+
+    <table id="lista">  
+        <thead>
+            <tr>                
+                <th class="title" scope="col">Data e Hora</th>
+                <th  scope="col">Matricula</th>
+                <th class="nome" scope="col">Nome</th>
+                <th scope="col">Unidade</th>
+                <th class="item" scope="col">Item</th>
+            </tr>
+        </thead>             
+    </table>
+
 
     <script type="text/javascript" src="index.js"></script>
 </body>
